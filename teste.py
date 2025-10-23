@@ -1,3 +1,5 @@
+'''
+
 #EXERCICIO 1
 #Crie uma classe Pessoa com os atributos nome e idade.
 #Crie um método que exiba uma mensagem: “Olá, meu nome é [nome] e tenho [idade] anos.”
@@ -87,6 +89,28 @@ animais=[Cachorro(),Gato(),Animal()]
 
 for a in animais:
     a.emitir_som()
-
+'''
 #EXERCICIO 5
 #Crie uma classe Produto com atributos nome e preço. Crie um método desconto(percentual).
+    
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+    
+    def desconto(self, percentual):
+        self.preco = self.preco -(self.preco * (percentual / 100));
+        print(f"Você recebeu {percentual}% de desconto!")
+        print(f"O valor total agora é {self.preco}")
+
+compra = Produto("Iphone 17 Pro Max",7500)
+compra.desconto(33)
+
+   
+#EXERCICIO 6
+#Crie uma classe Livro com título, autor e método exibir_detalhes().
+
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
