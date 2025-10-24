@@ -2,6 +2,8 @@
 #Crie uma classe Pessoa com os atributos nome e idade.
 #Crie um método que exiba uma mensagem: “Olá, meu nome é [nome] e tenho [idade] anos.”
 
+print("==== EXERCICIO 1 ====")
+
 class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome
@@ -17,6 +19,8 @@ p1.apresentar()
 #EXERCICIO 2
 #Crie uma classe Carro que tenha modelo, ano e velocidade.
 #Adicione métodos acelerar() e frear().
+
+print("==== EXERCICIO 2 ====")
 
 class Carro:
     def __init__(self, modelo, ano):
@@ -52,6 +56,8 @@ carro1.bater()
 #EXERCICIO 3
 #Crie uma classe Conta com saldo e métodos depositar() e sacar().
 
+print("==== EXERCICIO 3 ====")
+
 class ContaBancaria:
     def __init__(self, titular, saldo):
         self.titular = titular
@@ -59,19 +65,28 @@ class ContaBancaria:
 
     def depositar(self, valor):
         self.__saldo += valor
+        print(f"{self.titular} fez um depósito, o valor agora é R$ {self.__saldo}")
 
     def sacar(self, valor):
         if valor <= self.__saldo:
             self.__saldo -= valor
+            print(f"{self.titular} fez um saque, o valor agora é R$ {self.__saldo}")
         else:
             print("Saldo insuficiente.")
 
     def mostrar_saldo(self):
         print(f"Saldo atual: R$ {self.__saldo}")
 
+pessoa1 = ContaBancaria("Bruno",7500)
+pessoa1.sacar(2000)
+pessoa1.depositar(10.50)
+pessoa1.mostrar_saldo()
+
 
 #EXERCICIO 4       
 #4. Crie uma classe Animal com método falar().
+
+print("==== EXERCICIO 4 ====")
 
 class Animal:
     def emitir_som (self):
@@ -90,7 +105,9 @@ for a in animais:
 
 #EXERCICIO 5
 #Crie uma classe Produto com atributos nome e preço. Crie um método desconto(percentual).
-    
+
+print("==== EXERCICIO 5 ====")
+
 class Produto:
     def __init__(self, nome, preco):
         self.nome = nome
@@ -108,6 +125,8 @@ compra.desconto(33)
 #EXERCICIO 6
 #Crie uma classe Livro com título, autor e método exibir_detalhes().
 
+print("==== EXERCICIO 6 ====")
+
 class Livro:
     def __init__(self, titulo, autor):
         self.titulo = titulo
@@ -124,6 +143,7 @@ livro1.exibir_detalhes()
 #EXERCICIO 7 
 #Crie uma classe Aluno com nome, nota e método resultado() que diga se passou (nota ≥ 7).
 
+print("==== EXERCICIO 7 ====")
 
 class Aluno:
     def __init__(self, nome, nota):
@@ -144,6 +164,8 @@ aluno2.resultado()
 
 #EXERCICIO 8. 
 #Crie uma classe Calculadora com métodos somar, subtrair, multiplicar, dividir.
+
+print("==== EXERCICIO 8 ====")
 
 class Calculadora:
     def somar(self, num1, num2):
@@ -171,7 +193,9 @@ print("Divisão:", calc.dividir(10, 5))
 # EXERCICIO 9
 # Crie uma classe Funcionario e uma classe Gerente que herda de Funcionario e adiciona o atributo setor.
 
-class Funcionario:
+print("==== EXERCICIO 9 ====")
+
+class Funcionario: # botei aqui uma classe pai, ela vai carregar os dados de setor e tals.
     def __init__(self, nome, salario):
         self.nome = nome
         self.salario = salario
@@ -181,9 +205,8 @@ class Funcionario:
         print(f"Salário: R${self.salario:.2f}")
 
 
-class Gerente(Funcionario):
+class Gerente(Funcionario): 
     def __init__(self, nome, salario, setor):
-        # botei aqui uma classe pai, ela vai carregar os dados de setor e tals.
         super().__init__(nome, salario)# esse super é a função maneira q pega as info da classe acima, no caso nome e salario
         self.setor = setor
 
@@ -196,16 +219,16 @@ class Gerente(Funcionario):
 func1 = Funcionario("Bruno", 3000)
 gerente1 = Gerente("Theo", 7000, "Vendas")
 
-print("---- Funcionário ----")
+print("\n---- Funcionário ----")
 func1.exibir_informacoes()
 
 print("\n---- Gerente ----") #print para fins puramente estéticos, o de cima tb
 gerente1.exibir_informacoes()
 
-#10. Crie uma classe Retangulo com base e altura e método area().
-
 # EXERCICIO 10
 # Crie uma classe Retangulo com base e altura e método area().
+
+print("==== EXERCICIO 10 ====")
 
 class Retangulo:
     def __init__(self, base, altura):
