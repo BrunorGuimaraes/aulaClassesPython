@@ -1,5 +1,3 @@
-'''
-
 #EXERCICIO 1
 #Crie uma classe Pessoa com os atributos nome e idade.
 #Crie um método que exiba uma mensagem: “Olá, meu nome é [nome] e tenho [idade] anos.”
@@ -89,7 +87,7 @@ animais=[Cachorro(),Gato(),Animal()]
 
 for a in animais:
     a.emitir_som()
-'''
+
 #EXERCICIO 5
 #Crie uma classe Produto com atributos nome e preço. Crie um método desconto(percentual).
     
@@ -114,3 +112,108 @@ class Livro:
     def __init__(self, titulo, autor):
         self.titulo = titulo
         self.autor = autor
+
+    def exibir_detalhes(self):
+        print(f"Título: {self.titulo}")
+        print(f"Autor: {self.autor}")
+
+livro1 = Livro("Cristianismo Puro e Simples", "C.S. Lewis") #Livro bom demais inclusive
+livro1.exibir_detalhes()
+
+
+#EXERCICIO 7 
+#Crie uma classe Aluno com nome, nota e método resultado() que diga se passou (nota ≥ 7).
+
+
+class Aluno:
+    def __init__(self, nome, nota):
+        self.nome = nome
+        self.nota = nota
+
+    def resultado(self):
+        if self.nota >= 7:
+            print(f"{self.nome} foi aprovado com nota {self.nota}. Tirou onda!")
+        else:
+            print(f"{self.nome} foi reprovado com nota {self.nota}. Deu mole!")
+
+aluno1 = Aluno("Bruno", 8.5)
+aluno1.resultado()
+
+aluno2 = Aluno("Theo", 6)
+aluno2.resultado()
+
+#EXERCICIO 8. 
+#Crie uma classe Calculadora com métodos somar, subtrair, multiplicar, dividir.
+
+class Calculadora:
+    def somar(self, num1, num2):
+        return num1 + num2
+
+    def subtrair(self, num1, num2):
+        return num1 - num2
+
+    def multiplicar(self, num1, num2):
+        return num1 * num2
+
+    def dividir(self, num1, num2):
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Dividir por 0 não dá né meu querido, bota outra coisa!"
+
+calc = Calculadora()
+
+print("Soma:", calc.somar(10, 5))
+print("Subtração:", calc.subtrair(10, 5))
+print("Multiplicação:", calc.multiplicar(10, 5))
+print("Divisão:", calc.dividir(10, 5))
+
+# EXERCICIO 9
+# Crie uma classe Funcionario e uma classe Gerente que herda de Funcionario e adiciona o atributo setor.
+
+class Funcionario:
+    def __init__(self, nome, salario):
+        self.nome = nome
+        self.salario = salario
+
+    def exibir_informacoes(self):
+        print(f"Nome: {self.nome}")
+        print(f"Salário: R${self.salario:.2f}")
+
+
+class Gerente(Funcionario):
+    def __init__(self, nome, salario, setor):
+        # botei aqui uma classe pai, ela vai carregar os dados de setor e tals.
+        super().__init__(nome, salario)# esse super é a função maneira q pega as info da classe acima, no caso nome e salario
+        self.setor = setor
+
+    def exibir_informacoes(self):
+        super().exibir_informacoes() #aqui é a msm coisa basicamente
+        print(f"Setor: {self.setor}")
+
+
+# Exemplo de uso:
+func1 = Funcionario("Bruno", 3000)
+gerente1 = Gerente("Theo", 7000, "Vendas")
+
+print("---- Funcionário ----")
+func1.exibir_informacoes()
+
+print("\n---- Gerente ----") #print para fins puramente estéticos, o de cima tb
+gerente1.exibir_informacoes()
+
+#10. Crie uma classe Retangulo com base e altura e método area().
+
+# EXERCICIO 10
+# Crie uma classe Retangulo com base e altura e método area().
+
+class Retangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        return self.base * self.altura 
+
+retangulo1 = Retangulo(5, 3)
+print(f"A área do retângulo é: {retangulo1.area()}")
